@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<center>
+<form action="/movies" method="POST">
+    <input type="text" name="content" id="content" required>
+    <input type="submit" value="Add Movie">
+</form>
+<p class="mb-4">
+</p>
+<div class='container'>
+    <div class='columns is-mobile is-centered'>
+        <div class='column is-5'>
+            <div class='box'>
+                <table class="table">
+
+    <thead class="has-background-primary">
+        <tr>
+          <th>#</th>
+          <th>Poster</th>
+          <th>Name</th>
+          <th>Year</th>
+          <th>Genre</th>
+          <th></th>
+        </tr>
+      </thead>
+
+    {% for movie in movies %}
+    
+    <tr>
+        <td>{{ movie.id }}</td>
+        <td><img src={{ movie.poster }} height="70" width="70"></td>
+        <td>{{ movie.content }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.genre }}</td>
+
+
+        <td>
+            <a href="deleteMovie/{{movie.id}}" class="has-text-primary">Delete</a> <br>
+        </td>
+    </tr>
+    {% endfor %}
+</table></div>
+</center>
+{% endblock %}

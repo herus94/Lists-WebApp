@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<center>
+<form action="/books" method="POST">
+    <input type="text" name="content" id="content" required>
+    <input type="submit" value="Add Book">
+</form>
+<p class="mb-4">
+</p>
+<div class='container'>
+    <div class='columns is-mobile is-centered'>
+        <div class='column is-5'>
+            <div class='box'>
+                <table class="table">
+
+    <thead class="has-background-primary">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+
+    {% for book in books %}
+    
+    <tr>
+        <td>{{ book.id }}</td>
+        <td>{{ book.content }}</td>
+
+
+        <td>
+            <a href="deleteBook/{{book.id}}" class="has-text-primary">Delete</a> <br>
+        </td>
+    </tr>
+    {% endfor %}
+</table></div>
+</center>
+{% endblock %}

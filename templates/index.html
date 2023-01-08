@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div
+  class="navbar is-transparent"
+  style="flex-grow: 1; justify-content: center;"
+>
+<a class="navbar-item has-text-primary" href="/movies">
+    Movies
+  </a>
+  <a class="navbar-item has-text-primary" href="/books">
+      Books
+    </a>
+    <a class="navbar-item has-text-primary" href="/series">
+      Series
+    </a>
+</div>
+<div class='container'>
+    <div class='columns is-mobile is-centered'>
+        <div class='column is-5'>
+<div class="card">
+    <div class="card-content">
+      <p class="title">
+        {{ quote }}
+      </p>
+      <p class="subtitle">
+        {{ author }}
+      </p>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <span>
+          View on <a class="has-text-primary" href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+        </span>
+      </p>
+      <p class="card-footer-item">
+        <span>
+          Share on <a class="has-text-primary" href="#">Facebook</a>
+        </span>
+      </p>
+    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
